@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 .venv/
 venv/
+.venv-arm64/
 *.egg-info/
 .pytest_cache/
 .ruff_cache/
