@@ -42,9 +42,14 @@ class Settings:
         default_factory=lambda: BASE_DIR / os.getenv("TRACE_DB_PATH", "data/logs/traces.db")
     )
 
-    # CRM
-    crm_api_base_url: str = os.getenv("CRM_API_BASE_URL", "https://api.example-crm.com/v1")
-    crm_api_key: str = os.getenv("CRM_API_KEY", "changeme")
+    # CRM - Salesforce (username-password OAuth flow)
+    salesforce_login_url: str = os.getenv("SALESFORCE_LOGIN_URL", "https://login.salesforce.com")
+    salesforce_client_id: str = os.getenv("SALESFORCE_CLIENT_ID", "")
+    salesforce_client_secret: str = os.getenv("SALESFORCE_CLIENT_SECRET", "")
+    salesforce_username: str = os.getenv("SALESFORCE_USERNAME", "")
+    salesforce_password: str = os.getenv("SALESFORCE_PASSWORD", "")
+    salesforce_security_token: str = os.getenv("SALESFORCE_SECURITY_TOKEN", "")
+    salesforce_api_version: str = os.getenv("SALESFORCE_API_VERSION", "v59.0")
     crm_webhook_timeout_seconds: float = float(os.getenv("CRM_WEBHOOK_TIMEOUT_SECONDS", "5"))
 
     # App
